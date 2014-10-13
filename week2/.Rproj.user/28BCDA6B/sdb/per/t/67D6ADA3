@@ -1,0 +1,16 @@
+{
+    "contents" : "getFilename <- function(number) {\n  if( number < 10 )\n    paste0(\"00\", number, \".csv\")\n  else if( number < 100)\n    paste0(\"0\", number, \".csv\")\n  else\n    paste0(number, \".csv\")\n}\n\npollutantmean <- function(directory, pollutant, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'pollutant' is a character vector of length 1 indicating\n  ## the name of the pollutant for which we will calculate the\n  ## mean; either \"sulfate\" or \"nitrate\".\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return the mean of the pollutant across all monitors list\n  ## in the 'id' vector (ignoring NA values)\n  allNumbers <- c();\n  for( i in id) {\n    csvFilename <- getFilename(i);\n    filename <- paste(directory,csvFilename, sep=\"/\");\n    csv <- read.csv(filename)\n    numbers <- csv[pollutant]\n    bad <- is.na(numbers)\n    goodNumbers <- numbers[!bad]\n    allNumbers <- c(allNumbers,goodNumbers)\n  }\n  \n  mean(allNumbers)\n}\n\n",
+    "created" : 1413213485392.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1777581252",
+    "id" : "67D6ADA3",
+    "lastKnownWriteTime" : 1413213359,
+    "path" : "C:/Users/Vili/Dropbox/Coursera/Data Science/R Programming/week2/pollutantmean.R",
+    "project_path" : "pollutantmean.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

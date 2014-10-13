@@ -1,0 +1,16 @@
+{
+    "contents" : "pollutantmean('C:/Users/Vili/Dropbox/Coursera/Data Science/R Programming/week2/specdata', 'nitrate', 23);             \nsource(\"http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R\")\n",
+    "created" : 1413214650474.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3048411460",
+    "id" : "99B02DF8",
+    "lastKnownWriteTime" : 1413213419,
+    "path" : "C:/Users/Vili/Dropbox/Coursera/Data Science/R Programming/week2/assignment2.R",
+    "project_path" : "assignment2.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "getFilename <- function(number) {\n  if( number < 10 )\n    paste0(\"00\", number, \".csv\")\n  else if( number < 100)\n    paste0(\"0\", number, \".csv\")\n  else\n    paste0(number, \".csv\")\n}\n\n\ncomplete <- function(directory, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n  \n  result <- data.frame(id = id, nobs = 0)\n  row <- 1\n  for( i in id) {\n    csv <- read.csv(paste(directory,getFilename(i), sep=\"/\"))\n    ca <- complete.cases(csv$nitrate, csv$sulfate)\n    trueVector <- ca[ca]\n    count <- length(trueVector)\n    result[row, 2] <- count\n    row <- row + 1\n  }\n  \n  result\n}",
+    "created" : 1413213678390.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3082452480",
+    "id" : "6E0D0752",
+    "lastKnownWriteTime" : 1413215461,
+    "path" : "C:/Users/Vili/Dropbox/Coursera/Data Science/R Programming/week2/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
